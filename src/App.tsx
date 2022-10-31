@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { AppContainer } from "./styles";
+import { Card } from "./Card";
+import { Column } from "./Column";
+import { AddNewItem } from "./AddNewItem";
+
+export const App = () => {
+  return(
+    <AppContainer>
+      <Column text="To Do">
+        <Card text="Gerar scaffold do projeto" />
+      </Column>
+      <Column text="Doing">
+        <Card text="Aprender Typescript" />
+      </Column>
+      <Column text="Done">
+        <Card text="Começar a usar a tipagem estática" />
+      </Column>
+      <AddNewItem toggleButtonText="+ Adicionar outra lista" onAdd={console.log} dark />
+    </AppContainer>
+  )
 }
-
-export default App;
